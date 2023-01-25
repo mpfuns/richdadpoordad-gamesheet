@@ -29,3 +29,13 @@
 .small {
   font-size: 0.75rem;
 }
+.sidebar{
+  width: 95%;
+  height: 84.5vh; 
+} 
+.content{
+  width: 95%;
+  height: 85vh;
+  border: 1px solid;
+  overflow: auto;
+}

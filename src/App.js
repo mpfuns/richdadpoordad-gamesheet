@@ -1,11 +1,12 @@
 import './App.css';
 import Form  from './Components/form.js';
 
+import Sidebar from './Components/Sidebar';
 
 function App() {
   return (
     <div className="App">
-      <div className="sidebar">side bar</div> 
+     <Sidebar />  
       <Form />
     </div>
   );
