@@ -1,27 +1,23 @@
 import React, { useState } from 'react';
 export default Sidebar
-function Sidebar() {
+function Sidebar(props) {
   
-  const [thingArray, setThingArray] = React.useState(["thing1","thing2"])
+  
    
-  function addForm(){
+  const formElements = props.formArray.map((form) => <div
+   className={`title ${form.id=== props.}`}
+  
+  >{form.title}</div>)
 
+  
 
-    setThingArray(prev => [...prev, `thing${prev.length + 1}`])
-    return console.log(thingArray)
-   }
-
-function delForm(){
-
-
-  return console.log(thingArray)
-}
 
 
   return (
     <div className="sidebar">
-      <button onClick={addForm} className='main-plus-sidebar'><i class="fa-solid fa-plus"></i></button>
-      <button onClick={delForm} className='main-trash-sidebar'><i class="fa-solid fa-trash"></i></button>
+      {formElements}
+      <button onClick={props.addForm} className='main-plus-sidebar'><i class="fa-solid fa-plus"></i></button>
+      <button onClick={props.delForm} className='main-trash-sidebar'><i class="fa-solid fa-trash"></i></button>
     </div>
   );
 }
