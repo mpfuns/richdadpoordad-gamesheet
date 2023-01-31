@@ -1,3 +1,7 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Fredericka+the+Great&display=swap');
+
+
 .App {
   text-align: center;
   display:grid; 
@@ -41,8 +45,38 @@
   border: 1px solid;
   overflow: auto;
 }
-.active-note{
+.active-form{
   background-color: #282c34;
   color: white;
   cursor:pointer;
+  font-family: 'Fredericka the Great';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+}
+.active-form:hover >.trash-sidebar{
+  display: block;
+}
+
+.form{
+font-family: 'Fredericka the Great';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+color: #000000;
+cursor: pointer;
+
+}
+.form:hover >.trash-sidebar{
+  display: block;
+}
+
+.trash-sidebar{
+display: none;
+background: none;
+border:none;
+}
+.fa-trash{
+cursor: pointer;
+color:#ff0000
 }

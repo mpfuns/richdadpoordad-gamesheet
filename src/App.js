@@ -23,8 +23,9 @@ function App() {
     return console.log(formArray)
    }
 
-function delForm(){
-    setFormArray()
+function delForm(event, formID){
+    event.stopPropagation();
+    
 
   return console.log(formArray)
 }
