@@ -5,8 +5,8 @@ function Sidebar(props) {
   
    
   const formElements = props.formArray.map((form) => <div
-   className={`title ${form.id=== props.}`}
-  
+   className={`title ${form.id=== props.currentForm? 'active-note' : ''}`}
+   onClick={() => props.setCurrentForm(form.id)}
   >{form.title}</div>)
 
   

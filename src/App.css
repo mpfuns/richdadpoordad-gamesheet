@@ -41,3 +41,8 @@
   border: 1px solid;
   overflow: auto;
 }
+.active-note{
+  background-color: #282c34;
+  color: white;
+  cursor:pointer;
+}
