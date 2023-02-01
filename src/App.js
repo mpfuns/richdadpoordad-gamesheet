@@ -25,9 +25,9 @@ function App() {
 
 function delForm(event, formID){
     event.stopPropagation();
-    
+    setFormArray(oldForm => oldForm.filter(form => form.id!== formID))
 
-  return console.log(formArray)
+  return console.log("deleted", formID)
 }
 function findCurrentForm(){
  return formArray.find(form => {

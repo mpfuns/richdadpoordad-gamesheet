@@ -7,7 +7,7 @@ function Sidebar(props) {
   const formElements = props.formArray.map((form) => <div
    className={`title ${form.id=== props.currentForm? 'active-form' : 'form'}`}
    onClick={() => props.setCurrentForm(form.id)}
-  ><h4>{form.title}</h4>  <button onClick={props.delForm} className='trash-sidebar'><i class="fa-solid fa-trash"></i></button>
+  ><h4>{form.title}</h4>  <button onClick={(event)=> props.delForm(event,form.id)} className='trash-sidebar'><i class="fa-solid fa-trash"></i></button>
   </div>)
 
   
