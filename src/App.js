@@ -16,6 +16,38 @@ function App() {
       const newForm = {
         id: nanoid(),
         title: 'New',
+        income:{
+          salary:"0",
+          interest:{
+
+          },
+          realEstate:{
+
+          }
+        }, 
+        expense:{
+          taxes:"0",
+          home:"0",
+          school:"0",
+          car:"0",
+          credit:"0",
+          bank:"0",
+          children:"0",
+          otherExpense:{}
+
+        }, 
+        asset:{
+          saving:"0",
+          precious:"0",
+          stocks:{},
+          business:{}
+        },
+        liabilities:{
+          mort:"0",
+          sLoan:"0",
+          cLoan:"0", 
+        }
+
 
       }
 
