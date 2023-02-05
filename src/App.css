@@ -80,3 +80,7 @@ border:none;
 cursor: pointer;
 color:#ff0000
 }
+.content{
+  display: grid;
+  height: 100 vh;
+}
