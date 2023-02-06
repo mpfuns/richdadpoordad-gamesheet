@@ -5,7 +5,7 @@ function Form() {
    
 
   return (
-    <div className="content">
+    <div className="form-content">
     <div className="income">
       <h2>Income</h2>
       <label htmlFor="salary">Salary: $</label>
@@ -105,8 +105,8 @@ function Form() {
             <button><i class="fa-solid fa-trash"></i></button>
             </div>
     </div>
-    <div className='Libilites'>
-      <h2>Libilites</h2>
+    <div className='Liabilites'>
+      <h2>Liabilites</h2>
       <label htmlFor="Home-l">Home Mortgage: $</label>
       <input
                 type="number"

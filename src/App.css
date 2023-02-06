@@ -80,7 +80,28 @@ border:none;
 cursor: pointer;
 color:#ff0000
 }
-.content{
-  display: grid;
-  height: 100 vh;
+.form-content{
+display: grid;
+height: 100 vh;
+grid-template-columns: 1fr  2fr 2fr; 
+grid-template-rows: 1fr 1fr 1fr 1fr;
+grid-template-areas:
+"income math math math"
+"expense math math  math"
+"asset  asset lia lia"
+}
+.income{
+  grid-area: income;
+}
+.Expenses{
+  grid-area: expense;
+}
+.Asset{
+  grid-area: asset;
+}
+.Liabilites{
+  grid-area: lia;
+}
+.math-section{
+  grid-area:math;
 }
