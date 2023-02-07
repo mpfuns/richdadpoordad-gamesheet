@@ -9,7 +9,18 @@ import { nanoid } from 'nanoid'
 function App() {
   const [formArray, setFormArray] = React.useState([])
   const [currentForm, setCurrentForm] = React.useState((formArray[0] && formArray[0].id) || "")
+/*
+  addInterest(event, formID){
+event.stopPropgation();
+setFormArray(prev =>{
+if(prev.id=== formID) 
 
+})
+
+
+}
+
+*/
 
 
   function addForm(){
