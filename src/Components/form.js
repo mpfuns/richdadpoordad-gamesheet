@@ -19,8 +19,13 @@ function Form() {
             />
             <div id="interest">
             <h3>Interest/dividends:</h3>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-trash"></i></button>
+            <button id="i-dAdd"><i class="fa-solid fa-plus"></i></button>
+            <button id="i-dDel"><i class="fa-solid fa-trash"></i></button>
+            </div>
+            <div id="two-real">
+            <h3>Real Estate/Business</h3>
+            <button id="r-eAdd"><i class="fa-solid fa-plus"></i></button>
+            <button id="r-eDel"><i class="fa-solid fa-trash"></i></button>
             </div>
     </div>
     <div className='Expenses'>
@@ -76,8 +81,8 @@ function Form() {
             />
             <div id="other-expense">
             <h3>Other Expense:</h3>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-trash"></i></button>
+            <button id="o-eAdd"><i class="fa-solid fa-plus"></i></button>
+            <button id="o-eDel"><i class="fa-solid fa-trash"></i></button>
             </div>
     </div>
     <div className='Asset'>
@@ -98,13 +103,13 @@ function Form() {
             />
             <div id="three-share">
             <h3>Stocks/Funds/CDS: # of Share:  Cost/Shares:</h3>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-trash"></i></button>
+            <button id="s-fAdd"><i class="fa-solid fa-plus"></i></button>
+            <button id="s-fDel"><i class="fa-solid fa-trash"></i></button>
             </div>
             <div id="three-real">
             <h3>Real Estate/Business: Down Payment: Cost:</h3>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-trash"></i></button>
+            <button id="r-bAdd"><i class="fa-solid fa-plus"></i></button>
+            <button id="r-bDel"><i class="fa-solid fa-trash"></i></button>
             </div>
     </div>
     <div className='Liabilites'>
@@ -146,8 +151,8 @@ function Form() {
             />
             <div id="two-real-mort">
             <h3>Real Estate/Business:  Mortgage/Liability:</h3>
-            <button><i class="fa-solid fa-plus"></i></button>
-            <button><i class="fa-solid fa-trash"></i></button>
+            <button id="r-mAdd"><i class="fa-solid fa-plus"></i></button>
+            <button id="r-mDel"><i class="fa-solid fa-trash"></i></button>
             </div>
     </div>
     <div className='math-section'>

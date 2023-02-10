@@ -10,12 +10,35 @@ function App() {
   const [formArray, setFormArray] = React.useState([])
   const [currentForm, setCurrentForm] = React.useState((formArray[0] && formArray[0].id) || "")
 /*
-  addInterest(event, formID){
+addInterest(event, formID,sectionId){
 event.stopPropgation();
-setFormArray(prev =>{
-if(prev.id=== formID) 
+const new section={
+name:"", 
+id: nanoid(),
+value:""
+}
 
-})
+if(sectionId ==="i-dAdd"){
+
+}
+else if(sectionId==="r-eAdd"){
+
+} 
+else if(sectionId==="o-eAdd"){
+
+}
+else if(sectionId==="s-fAdd"){
+
+}
+else if(sectionId==="r-bAdd"){
+
+}
+else if(sectionId==="r-mAdd"){
+
+}
+
+
+
 
 
 }
@@ -29,12 +52,8 @@ if(prev.id=== formID)
         title: 'New',
         income:{
           salary:"0",
-          interest:{
-
-          },
-          realEstate:{
-
-          }
+          interest:[],
+          realEstate:[]
         }, 
         expense:{
           taxes:"0",
@@ -44,14 +63,14 @@ if(prev.id=== formID)
           credit:"0",
           bank:"0",
           children:"0",
-          otherExpense:{}
+          otherExpense:[]
 
         }, 
         asset:{
           saving:"0",
           precious:"0",
-          stocks:{},
-          business:{}
+          stocks:[],
+          business:[]
         },
         liabilities:{
           mort:"0",
