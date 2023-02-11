@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 export default Form;
 function Form(props) {
   
-   const interestDiv= props.currentForm.income.interest.map(input => (
+  /*
+  const interestDiv= props.currentForm.income.interest.map(input => (
    <div>
    <input
     type="text"
@@ -24,7 +25,7 @@ function Form(props) {
 
 
 ) )
-
+*/
 
   
   return (
@@ -41,7 +42,7 @@ function Form(props) {
             <div id="interest">
             <h3>Interest/dividends:</h3>
             <button id="i-dAdd"><i className="fa-solid fa-plus"></i></button>
-           {interestDiv}
+        
 
             </div>
             <div id="two-real">
