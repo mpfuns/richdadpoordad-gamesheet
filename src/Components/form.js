@@ -1,8 +1,29 @@
 import React, { useState } from 'react';
 export default Form;
-function Form() {
+function Form(props) {
   
-   
+   const interestDiv= props.currentForm.income.interest.map(input => (
+   <div>
+   <input
+    type="text"
+    placeholder="name of interest/dividends"
+    //onChange={handleChange}
+    id={`${input.id}-text`}
+    value={input.name}
+/>
+<label htmlFor={input.name}>: $</label>
+<input
+                type="number"
+                placeholder="0"
+                //onChange={handleChange}
+                id={`${input.id}-vaule`}
+                value={input.value}
+            />
+<button id="i-dDel" className='trash-sidebar'><i className="fa-solid fa-trash"></i></button>
+</div>
+
+
+) )
 
 
   
@@ -19,13 +40,16 @@ function Form() {
             />
             <div id="interest">
             <h3>Interest/dividends:</h3>
-            <button id="i-dAdd"><i class="fa-solid fa-plus"></i></button>
-            <button id="i-dDel"><i class="fa-solid fa-trash"></i></button>
+            <button id="i-dAdd"><i className="fa-solid fa-plus"></i></button>
+           {interestDiv}
+
             </div>
             <div id="two-real">
             <h3>Real Estate/Business</h3>
-            <button id="r-eAdd"><i class="fa-solid fa-plus"></i></button>
-            <button id="r-eDel"><i class="fa-solid fa-trash"></i></button>
+            <button id="r-eAdd"><i className="fa-solid fa-plus"></i></button>
+            <button id="r-eDel"><i className="fa-solid fa-trash"></i></button>
+
+
             </div>
     </div>
     <div className='Expenses'>
@@ -81,8 +105,8 @@ function Form() {
             />
             <div id="other-expense">
             <h3>Other Expense:</h3>
-            <button id="o-eAdd"><i class="fa-solid fa-plus"></i></button>
-            <button id="o-eDel"><i class="fa-solid fa-trash"></i></button>
+            <button id="o-eAdd"><i className="fa-solid fa-plus"></i></button>
+            <button id="o-eDel"><i className="fa-solid fa-trash"></i></button>
             </div>
     </div>
     <div className='Asset'>
@@ -103,13 +127,13 @@ function Form() {
             />
             <div id="three-share">
             <h3>Stocks/Funds/CDS: # of Share:  Cost/Shares:</h3>
-            <button id="s-fAdd"><i class="fa-solid fa-plus"></i></button>
-            <button id="s-fDel"><i class="fa-solid fa-trash"></i></button>
+            <button id="s-fAdd"><i className="fa-solid fa-plus"></i></button>
+            <button id="s-fDel"><i className="fa-solid fa-trash"></i></button>
             </div>
             <div id="three-real">
             <h3>Real Estate/Business: Down Payment: Cost:</h3>
-            <button id="r-bAdd"><i class="fa-solid fa-plus"></i></button>
-            <button id="r-bDel"><i class="fa-solid fa-trash"></i></button>
+            <button id="r-bAdd"><i className="fa-solid fa-plus"></i></button>
+            <button id="r-bDel"><i className="fa-solid fa-trash"></i></button>
             </div>
     </div>
     <div className='Liabilites'>
@@ -151,8 +175,8 @@ function Form() {
             />
             <div id="two-real-mort">
             <h3>Real Estate/Business:  Mortgage/Liability:</h3>
-            <button id="r-mAdd"><i class="fa-solid fa-plus"></i></button>
-            <button id="r-mDel"><i class="fa-solid fa-trash"></i></button>
+            <button id="r-mAdd"><i className="fa-solid fa-plus"></i></button>
+            <button id="r-mDel"><i className="fa-solid fa-trash"></i></button>
             </div>
     </div>
     <div className='math-section'>

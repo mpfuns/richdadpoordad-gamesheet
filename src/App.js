@@ -8,18 +8,28 @@ import { nanoid } from 'nanoid'
 
 function App() {
   const [formArray, setFormArray] = React.useState([])
-  const [currentForm, setCurrentForm] = React.useState((formArray[0] && formArray[0].id) || "")
-/*
-addInterest(event, formID,sectionId){
+  const [currentForm, setCurrentForm] = React.useState({})
+
+ function addInputs(event, formID,sectionId){
 event.stopPropgation();
-const new section={
+const newSection={
 name:"", 
 id: nanoid(),
 value:""
 }
 
 if(sectionId ==="i-dAdd"){
-
+ setFormArray(prev => prev.map(form=> {
+   if (form.id === formID){
+     return {...form,
+    income: {...form.income, 
+    interest:[...form.interest, newSection]
+    }}
+   }
+   else{
+    return {...form}
+   }
+ }))
 }
 else if(sectionId==="r-eAdd"){
 
@@ -43,7 +53,8 @@ else if(sectionId==="r-mAdd"){
 
 }
 
-*/
+
+
 
 
   function addForm(){
@@ -109,7 +120,12 @@ function findCurrentForm(){
      setCurrentForm={setCurrentForm}
      currentForm={currentForm}
      />  
-      <Form />
+      {currentForm?<Form  
+       currentForm={currentForm}
+       setCurrentForm={setCurrentForm}
+       addInputs={addInputs}
+
+      /> :<h1>Please push the Plus button to start </h1>}
     </div>
   );
 }
