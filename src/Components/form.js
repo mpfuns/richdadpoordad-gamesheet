@@ -2,31 +2,7 @@ import React, { useState } from 'react';
 export default Form;
 function Form(props) {
   
-  /*
-  const interestDiv= props.currentForm.income.interest.map(input => (
-   <div>
-   <input
-    type="text"
-    placeholder="name of interest/dividends"
-    //onChange={handleChange}
-    id={`${input.id}-text`}
-    value={input.name}
-/>
-<label htmlFor={input.name}>: $</label>
-<input
-                type="number"
-                placeholder="0"
-                //onChange={handleChange}
-                id={`${input.id}-vaule`}
-                value={input.value}
-            />
-<button id="i-dDel" className='trash-sidebar'><i className="fa-solid fa-trash"></i></button>
-</div>
-
-
-) )
-*/
-
+  console.log(props.income)
   
   return (
     <div className="form-content">

@@ -92,8 +92,9 @@ else if(sectionId==="r-mAdd"){
 
       }
 
-    setFormArray(prev => [...prev,newForm])
-    return console.log(formArray)
+    return setFormArray(prev => [...prev,newForm])
+    
+   
    }
 
 function delForm(event, formID){
@@ -110,7 +111,6 @@ function findCurrentForm(){
 
 
 
-
   return (
     <div className="App">
      <Sidebar  
@@ -124,6 +124,10 @@ function findCurrentForm(){
        currentForm={currentForm}
        setCurrentForm={setCurrentForm}
        addInputs={addInputs}
+       income={currentForm.income}
+       expense={currentForm.expense}
+       asset={currentForm.asset}
+       liabilities={currentForm.liabilities}
 
       /> :<h1>Please push the Plus button to start </h1>}
     </div>
