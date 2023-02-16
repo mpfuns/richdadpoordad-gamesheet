@@ -8,7 +8,7 @@ import { nanoid } from 'nanoid'
 
 function App() {
   const [formArray, setFormArray] = React.useState([])
-  const [currentForm, setCurrentForm] = React.useState({})
+  const [currentForm, setCurrentForm] = React.useState()
 
  function addInputs(event, formID,sectionId){
 event.stopPropgation();

@@ -1,8 +1,31 @@
+import { toBeInTheDocument } from '@testing-library/jest-dom/dist/matchers';
 import React, { useState } from 'react';
 export default Form;
 function Form(props) {
-  
-  console.log(props.income)
+
+ const interestDiv= props.income.interest.map(input => (
+   <div>
+   <input
+    type="text"
+    placeholder="name of interest/dividends"
+    //onChange={handleChange}
+    id={`${input.id}-text`}
+    value={input.name}
+/>
+<label htmlFor={input.name}>: $</label>
+<input
+                type="number"
+                placeholder="0"
+                //onChange={handleChange}
+                id={`${input.id}-vaule`}
+                value={input.value}
+            />
+<button id="i-dDel" className='trash-sidebar'><i className="fa-solid fa-trash"></i></button>
+</div>
+
+
+) )
+
   
   return (
     <div className="form-content">
