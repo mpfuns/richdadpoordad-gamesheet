@@ -2,38 +2,15 @@ import React, { useState } from 'react';
 export default Sidebar
 function Sidebar(props) {
   
-  const activeForm= {
-    backgroundColor: "#282c34",
-  color: "white",
-  cursor: "pointer",
-  fontFamily: 'Fredericka the Great',
-fontStyle: "normal",
-fontWeight: 400,
-fontSize: "32px"
-  }
 
-  const notActiveForm={
-  fontFamily: 'Fredericka the Great',
-fontStyle: "normal",
-fontWeight: 400,
-fontSize: "32px",
-color: "#000000",
-cursor: "pointer"
-  }
   
 function activeAndCurrentForm(form) {
-
-formElements.map( piece =>{
-   if (piece.id=== form.id){
+   if(props.currentForm.id===form.id){
     
-    document.getElementById(piece.id).className="active-form"
+    return "active-form"} else{return "form"}
+  
+   
 
-   } else if (piece.id !== form.id){
-    document.getElementById(piece.id).className = "form"
-   }
-})
-
-  return props.setCurrentForm(form)
 }  
 
 
@@ -41,9 +18,10 @@ formElements.map( piece =>{
 
 
   const formElements = props.formArray.map((form) => <div
-  className='form'
+  className={props.currentForm? activeAndCurrentForm(form) :"form"}
+  key={form.id}
    id={form.id}
-   onClick={() =>activeAndCurrentForm(form)}
+   onClick={() =>props.setCurrentForm(form)}
   ><h4>{form.title}</h4>  <button onClick={(event)=> props.delForm(event,form.id)} className='trash-sidebar'><i className="fa-solid fa-trash"></i></button>
   </div>)
 
