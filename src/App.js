@@ -10,8 +10,10 @@ function App() {
   const [formArray, setFormArray] = React.useState([])
   const [currentForm, setCurrentForm] = React.useState()
 
- function addInputs(event, formID,sectionId){
-event.stopPropgation();
+ function addInputs(formID,sectionId){
+
+
+
 const newSection={
 name:"", 
 id: nanoid(),

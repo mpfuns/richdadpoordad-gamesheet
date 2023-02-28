@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 export default Form;
 function Form(props) {
 
+
+
+
+
  const interestDiv= props.income.interest.map(input => (
    <div>
    <input
@@ -17,7 +21,7 @@ function Form(props) {
                 type="number"
                 placeholder="0"
                 //onChange={handleChange}
-                id={`${input.id}-vaule`}
+                id={`${input.id}-value`}
                 value={input.value}
             />
 <button id="i-dDel" className='trash-sidebar'><i className="fa-solid fa-trash"></i></button>
@@ -40,8 +44,8 @@ function Form(props) {
             />
             <div id="interest">
             <h3>Interest/dividends:</h3>
-            <button id="i-dAdd"><i className="fa-solid fa-plus"></i></button>
-        
+            <button id="i-dAdd" onClick={() =>props.addInputs(props.currentForm.id,"i-dAdd" )}><i className="fa-solid fa-plus"></i></button>
+            
 
             </div>
             <div id="two-real">
