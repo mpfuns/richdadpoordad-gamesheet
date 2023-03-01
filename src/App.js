@@ -21,17 +21,14 @@ value:""
 }
 
 if(sectionId ==="i-dAdd"){
- setFormArray(prev => prev.map(form=> {
-   if (form.id === formID){
-     return {...form,
-    income: {...form.income, 
-    interest:[...form.interest, newSection]
-    }}
-   }
-   else{
-    return {...form}
-   }
- }))
+  console.log(`${formID}`)
+ //WORKING HERE TO FIX BUG
+
+ setFormArray(prev => {
+  console.log(prev)
+return prev
+ })
+ 
 }
 else if(sectionId==="r-eAdd"){
 
@@ -51,7 +48,7 @@ else if(sectionId==="r-mAdd"){
 
 
 
-
+console.log(formArray)
 
 }
 

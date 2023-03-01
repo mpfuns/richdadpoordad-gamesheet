@@ -16,7 +16,7 @@ function Form(props) {
     id={`${input.id}-text`}
     value={input.name}
 />
-<label htmlFor={input.name}>: $</label>
+<label htmlFor={`${input.id}-text`}>: $</label>
 <input
                 type="number"
                 placeholder="0"
@@ -45,7 +45,7 @@ function Form(props) {
             <div id="interest">
             <h3>Interest/dividends:</h3>
             <button id="i-dAdd" onClick={() =>props.addInputs(props.currentForm.id,"i-dAdd" )}><i className="fa-solid fa-plus"></i></button>
-            
+            {interestDiv}
 
             </div>
             <div id="two-real">
