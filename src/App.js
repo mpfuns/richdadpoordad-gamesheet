@@ -20,29 +20,123 @@ id: nanoid(),
 value:""
 }
 
+const newbus ={
+  name:"", 
+id: nanoid(),
+value:"",
+downPayment:""
+}
+
+
 if(sectionId ==="i-dAdd"){
   console.log(`${formID}`)
  //WORKING HERE TO FIX BUG
+  const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+    ...piece,
+    income:{...piece.income,
+    interest: piece.interest? [...piece.interest, newSection]:[newSection]
+      
+  } 
 
- setFormArray(prev => {
-  console.log(prev)
-return prev
- })
+}})
+  
+  const notMatch = formArray.filter(form => form.id !== formID)
  
+  const newMatch= theMatch.concat(notMatch)
+  
+  setFormArray(newMatch)
+  setCurrentForm(theMatch[0])
 }
 else if(sectionId==="r-eAdd"){
+  const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+    ...piece,
+    income:{...piece.income,
+      realEstate: piece.realEstate? [...piece.realEstate, newSection]:[newSection]
+      
+  } 
 
+}})
+  
+  const notMatch = formArray.filter(form => form.id !== formID)
+ 
+  const newMatch= theMatch.concat(notMatch)
+  
+  setFormArray(newMatch)
+  setCurrentForm(theMatch[0])
 } 
 else if(sectionId==="o-eAdd"){
+  const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+    ...piece,
+    expense:{...piece.expense,
+      realEstate: piece.otherExpense? [...piece.otherExpense, newSection]:[newSection]
+      
+  } 
+
+}})
+  
+  const notMatch = formArray.filter(form => form.id !== formID)
+ 
+  const newMatch= theMatch.concat(notMatch)
+  
+  setFormArray(newMatch)
+  setCurrentForm(theMatch[0])
 
 }
 else if(sectionId==="s-fAdd"){
+  const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+    ...piece,
+    asset:{...piece.asset,
+      stocks: piece.stocks? [...piece.stocks, newSection]:[newSection]
+      
+  } 
+
+}})
+  
+  const notMatch = formArray.filter(form => form.id !== formID)
+ 
+  const newMatch= theMatch.concat(notMatch)
+  
+  setFormArray(newMatch)
+  setCurrentForm(theMatch[0])
+
 
 }
 else if(sectionId==="r-bAdd"){
 
+  const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+    ...piece,
+    asset:{...piece.asset,
+      business: piece.business? [...piece.business, newbus]:[newbus]
+      
+  } 
+
+}})
+  
+  const notMatch = formArray.filter(form => form.id !== formID)
+ 
+  const newMatch= theMatch.concat(notMatch)
+  
+  setFormArray(newMatch)
+  setCurrentForm(theMatch[0])
+
 }
 else if(sectionId==="r-mAdd"){
+
+  const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+    ...piece,
+    liabilities:{...piece.liabilities,
+      realLiability: piece.realLiability? [...piece.realLiability, newSection]:[newSection]
+      
+  } 
+
+}})
+  
+  const notMatch = formArray.filter(form => form.id !== formID)
+ 
+  const newMatch= theMatch.concat(notMatch)
+  
+  setFormArray(newMatch)
+  setCurrentForm(theMatch[0])
 
 }
 
@@ -85,7 +179,9 @@ console.log(formArray)
         liabilities:{
           mort:"0",
           sLoan:"0",
-          cLoan:"0", 
+          cLoan:"0",
+          bLoan:"0",
+          realLiability: [] 
         }
 
 
@@ -131,6 +227,6 @@ function findCurrentForm(){
       /> :<h1>Please push the Plus button to start </h1>}
     </div>
   );
-}
+      }
 
 export default App;

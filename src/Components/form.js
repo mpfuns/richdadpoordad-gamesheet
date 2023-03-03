@@ -8,7 +8,7 @@ function Form(props) {
 
 
  const interestDiv= props.income.interest.map(input => (
-   <div>
+   <div className='input'>
    <input
     type="text"
     placeholder="name of interest/dividends"
@@ -24,7 +24,7 @@ function Form(props) {
                 id={`${input.id}-value`}
                 value={input.value}
             />
-<button id="i-dDel" className='trash-sidebar'><i className="fa-solid fa-trash"></i></button>
+<button id="i-dDel" className='input-trash' ><i className="fa-solid fa-trash"></i></button>
 </div>
 
 

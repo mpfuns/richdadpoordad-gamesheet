@@ -80,6 +80,14 @@ border:none;
 cursor: pointer;
 color:#ff0000
 }
+.input:hover > .input-trash{
+  display: block;
+}
+.input-trash{
+  display: none;
+background: none;
+border:none;
+}
 .form-content{
 display: grid;
 height: 100 vh;
