@@ -10,9 +10,10 @@ function App() {
   const [formArray, setFormArray] = React.useState([])
   const [currentForm, setCurrentForm] = React.useState()
 
- function addInputs(formID,sectionId){
-
-  
+ 
+ 
+ 
+  function addInputs(formID,sectionId){
 
 
 const newSection={
@@ -37,7 +38,7 @@ if(sectionId ==="i-dAdd"){
   const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
     ...piece,
     income:{...piece.income,
-    interest: piece.interest? [...piece.interest, newSection]:[newSection]
+    interest: piece.income.interest? [...piece.income.interest, newSection]:[newSection]
       
   } 
 
@@ -57,7 +58,7 @@ else if(sectionId==="r-eAdd"){
   const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
     ...piece,
     income:{...piece.income,
-      realEstate: piece.realEstate? [...piece.realEstate, newSection]:[newSection]
+      realEstate: piece.income.realEstate? [...piece.income.realEstate, newSection]:[newSection]
       
   } 
 
@@ -74,7 +75,7 @@ else if(sectionId==="o-eAdd"){
   const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
     ...piece,
     expense:{...piece.expense,
-      otherExpense: piece.otherExpense? [...piece.otherExpense, newSection]:[newSection]
+      otherExpense: piece.expense.otherExpense? [...piece.expense.otherExpense, newSection]:[newSection]
       
   } 
 
@@ -92,7 +93,7 @@ else if(sectionId==="s-fAdd"){
   const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
     ...piece,
     asset:{...piece.asset,
-      stocks: piece.stocks? [...piece.stocks, newbus]:[newbus]
+      stocks: piece.asset.stocks? [...piece.asset.stocks, newbus]:[newbus]
       
   } 
 
@@ -112,7 +113,7 @@ else if(sectionId==="r-bAdd"){
   const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
     ...piece,
     asset:{...piece.asset,
-      business: piece.business? [...piece.business, newbus]:[newbus]
+      business: piece.asset.business? [...piece.asset.business, newbus]:[newbus]
       
   } 
 
@@ -131,7 +132,7 @@ else if(sectionId==="r-mAdd"){
   const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
     ...piece,
     liabilities:{...piece.liabilities,
-      realLiability: piece.realLiability? [...piece.realLiability, newSection]:[newSection]
+      realLiability: piece.liabilities.realLiability? [...piece/liabilities.realLiability, newSection]:[newSection]
       
   } 
 
@@ -148,11 +149,11 @@ else if(sectionId==="r-mAdd"){
 
 
 
-console.log(formArray)
+
 
 }
 
-
+console.log(formArray)
 
 
 
