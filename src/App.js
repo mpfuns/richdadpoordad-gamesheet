@@ -12,6 +12,7 @@ function App() {
 
  function addInputs(formID,sectionId){
 
+  
 
 
 const newSection={
@@ -26,6 +27,8 @@ id: nanoid(),
 value:"",
 downPayment:""
 }
+
+
 
 
 if(sectionId ==="i-dAdd"){
@@ -44,6 +47,9 @@ if(sectionId ==="i-dAdd"){
  
   const newMatch= theMatch.concat(notMatch)
   
+  console.log(theMatch)
+
+
   setFormArray(newMatch)
   setCurrentForm(theMatch[0])
 }
@@ -68,7 +74,7 @@ else if(sectionId==="o-eAdd"){
   const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
     ...piece,
     expense:{...piece.expense,
-      realEstate: piece.otherExpense? [...piece.otherExpense, newSection]:[newSection]
+      otherExpense: piece.otherExpense? [...piece.otherExpense, newSection]:[newSection]
       
   } 
 
@@ -86,7 +92,7 @@ else if(sectionId==="s-fAdd"){
   const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
     ...piece,
     asset:{...piece.asset,
-      stocks: piece.stocks? [...piece.stocks, newSection]:[newSection]
+      stocks: piece.stocks? [...piece.stocks, newbus]:[newbus]
       
   } 
 
