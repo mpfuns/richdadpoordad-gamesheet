@@ -24,7 +24,7 @@ function Form(props) {
                 id={`${input.id}-value`}
                 value={input.value}
             />
-<button id="i-dDel" className='input-trash' ><i className="fa-solid fa-trash"></i></button>
+<button id="i-dDel" className='input-trash' onClick={() =>props.delInput(props.currentForm.id,"i-dDel", input.id )}><i className="fa-solid fa-trash"></i></button>
 </div>
 
 
@@ -48,7 +48,7 @@ const  realEstateDiv= props.income.realEstate.map(input => (
                id={`${input.id}-value`}
                value={input.value}
            />
-<button id="r-eDel" className='input-trash' ><i className="fa-solid fa-trash"></i></button>
+<button id="r-eDel" className='input-trash' onClick={()=>props.delInput(props.currentForm.id,"r-eDel", input.id )} ><i className="fa-solid fa-trash"></i></button>
 </div>))
 
 const  expenseDiv= props.expense.otherExpense.map(input => (
@@ -68,7 +68,7 @@ const  expenseDiv= props.expense.otherExpense.map(input => (
                id={`${input.id}-value`}
                value={input.value}
            />
-<button id="o-eDel" className='input-trash' ><i className="fa-solid fa-trash"></i></button>
+<button id="o-eDel" className='input-trash' onClick={()=>props.delInput(props.currentForm.id,"o-eDel", input.id )} ><i className="fa-solid fa-trash"></i></button>
 </div>))
 
 const  stockDiv= props.asset.stocks.map(input => (
@@ -96,7 +96,7 @@ const  stockDiv= props.asset.stocks.map(input => (
                id={`${input.id}-value`}
                value={input.value}
            />
-<button id="s-fDel" className='input-trash' ><i className="fa-solid fa-trash"></i></button>
+<button id="s-fDel" className='input-trash' onClick={()=>props.delInput(props.currentForm.id,"s-fDel", input.id )} ><i className="fa-solid fa-trash"></i></button>
 </div>))
 
 
@@ -125,7 +125,7 @@ const  businessDiv= props.asset.business.map(input => (
                id={`${input.id}-value`}
                value={input.value}
            />
-<button id="r-bDel" className='input-trash' ><i className="fa-solid fa-trash"></i></button>
+<button id="r-bDel" className='input-trash' onClick={()=>props.delInput(props.currentForm.id,"r-bDel", input.id )} ><i className="fa-solid fa-trash"></i></button>
 </div>))
 
 const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
@@ -145,7 +145,7 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
                id={`${input.id}-value`}
                value={input.value}
            />
-<button id="r-mDel" className='input-trash' ><i className="fa-solid fa-trash"></i></button>
+<button id="r-mDel" className='input-trash' onClick={()=>props.delInput(props.currentForm.id,"r-mDel", input.id )}><i className="fa-solid fa-trash"></i></button>
 </div>))
   
   return (

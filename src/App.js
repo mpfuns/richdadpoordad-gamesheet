@@ -6,6 +6,7 @@ import { nanoid } from 'nanoid'
 
 
 
+
 function App() {
   const [formArray, setFormArray] = React.useState([])
   const [currentForm, setCurrentForm] = React.useState()
@@ -22,6 +23,7 @@ id: nanoid(),
 value:""
 }
 
+// this is  input with 3 of them 
 const newbus ={
   name:"", 
 id: nanoid(),
@@ -33,8 +35,7 @@ downPayment:""
 
 
 if(sectionId ==="i-dAdd"){
-  console.log(`${formID}`)
- //WORKING HERE TO FIX BUG
+ 
   const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
     ...piece,
     income:{...piece.income,
@@ -48,7 +49,7 @@ if(sectionId ==="i-dAdd"){
  
   const newMatch= theMatch.concat(notMatch)
   
-  console.log(theMatch)
+  
 
 
   setFormArray(newMatch)
@@ -202,14 +203,134 @@ console.log(formArray)
 function delForm(event, formID){
     event.stopPropagation();
     setFormArray(oldForm => oldForm.filter(form => form.id!== formID))
-
+    setCurrentForm(formArray[0])
   return console.log("deleted", formID)
 }
-function findCurrentForm(){
- return formArray.find(form => {
-  return form.id ===currentForm
- })
+
+function delInput(formID, sectionID, inputID){
+
+  
+  if(sectionID ==="i-dDel"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      income:{...piece.income,
+      interest: piece.income.interest.filter(interest => interest.id !== inputID)
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    
+  
+  
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+
+
+  }
+   else if(sectionID ==="r-eDel"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      income:{...piece.income,
+        realEstate: piece.income.realEstate.filter(part => part.id !== inputID)
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+  } 
+  else if(sectionID ==="o-eDel"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      expense:{...piece.expense,
+        otherExpense: piece.expense.otherExpense.filter(exp => exp.id !== inputID)
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+    
+  }
+  else if(sectionID ==="s-fDel"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      asset:{...piece.asset,
+        stocks: piece.asset.stocks.filter(stock => stock.id !== inputID)
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+    
+  }
+  
+  else if(sectionID ==="r-bDel"){
+
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      asset:{...piece.asset,
+        business: piece.asset.business.filter(bus => bus.id !== inputID)
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+  }
+  
+  else if(sectionID ==="r-mDel"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      liabilities:{...piece.liabilities,
+        realLiability: piece.liabilities.realLiability.filter(liability => liability.id !== inputID)
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+  }
+
+
 }
+
 
 
 
@@ -230,6 +351,8 @@ function findCurrentForm(){
        expense={currentForm.expense}
        asset={currentForm.asset}
        liabilities={currentForm.liabilities}
+       delInput={delInput}
+       
 
       /> :<h1>Please push the Plus button to start </h1>}
     </div>
