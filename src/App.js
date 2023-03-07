@@ -132,7 +132,7 @@ else if(sectionId==="r-mAdd"){
   const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
     ...piece,
     liabilities:{...piece.liabilities,
-      realLiability: piece.liabilities.realLiability? [...piece/liabilities.realLiability, newSection]:[newSection]
+      realLiability: piece.liabilities.realLiability? [...piece.liabilities.realLiability, newSection]:[newSection]
       
   } 
 
