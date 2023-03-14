@@ -331,6 +331,42 @@ function delInput(formID, sectionID, inputID){
 
 }
 
+function changeInput(formID, sectionID, inputID,event){
+
+   const changeElement = event.target.value
+
+   if(sectionID=== "i-dChange-text"){
+
+
+   } else if(sectionID ==="i-dChange-value"){
+
+
+   } else  if(sectionID === "r-eChange-text"){
+
+    
+   } else if(sectionID === "r-eChange-value"){
+
+
+   } else if(sectionID === "o-eChange-text"){
+
+
+   } else if(sectionID=== "o-eChange-value"){
+
+
+   } else if(sectionID === "s-fChange-text"){
+
+
+   } else  if(sectionID === "s-fChange-downpayment"){
+
+
+   } else if (sectionID=== "s-fChange-value"){
+    
+   } else if(sectionID=== "s-fChange-value"){
+
+   }
+
+
+}
 
 
 
