@@ -332,8 +332,8 @@ function delInput(formID, sectionID, inputID){
 }
 
 function changeInput(formID, sectionID, inputID,event){
-
-   const changeElement = event.target.value
+ 
+if (event !== undefined){
 
    if(sectionID=== "i-dChange-text"){
     const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
@@ -343,7 +343,7 @@ function changeInput(formID, sectionID, inputID,event){
         if(part.id=== inputID){
           return{
             ...part,
-            name: changeElement
+            name: event.target.value
           }
         }
         else {
@@ -373,7 +373,7 @@ function changeInput(formID, sectionID, inputID,event){
         if(part.id=== inputID){
           return{
             ...part,
-            value: changeElement
+            value: event.target.value
           }
         }
         else {
@@ -403,7 +403,7 @@ function changeInput(formID, sectionID, inputID,event){
           if(part.id=== inputID){
             return{
               ...part,
-              name: changeElement
+              name: event.target.value
             }
           }
           else {
@@ -430,7 +430,7 @@ function changeInput(formID, sectionID, inputID,event){
           if(part.id=== inputID){
             return{
               ...part,
-              value: changeElement
+              value: event.target.value
             }
           }
           else {
@@ -457,7 +457,7 @@ function changeInput(formID, sectionID, inputID,event){
           if(part.id=== inputID){
             return{
               ...part,
-              name: changeElement
+              name: event.target.value
             }
           }
           else {
@@ -484,7 +484,7 @@ function changeInput(formID, sectionID, inputID,event){
           if(part.id=== inputID){
             return{
               ...part,
-              value: changeElement
+              value: event.target.value
             }
           }
           else {
@@ -513,7 +513,7 @@ function changeInput(formID, sectionID, inputID,event){
           if(part.id=== inputID){
             return{
               ...part,
-              name: changeElement
+              name: event.target.value
             }
           }
           else {
@@ -539,7 +539,7 @@ function changeInput(formID, sectionID, inputID,event){
           if(part.id=== inputID){
             return{
               ...part,
-              downPayment: changeElement
+              downPayment:event.target.value
             }
           }
           else {
@@ -565,7 +565,7 @@ function changeInput(formID, sectionID, inputID,event){
           if(part.id=== inputID){
             return{
               ...part,
-              value: changeElement
+              value: event.target.value
             }
           }
           else {
@@ -590,7 +590,7 @@ function changeInput(formID, sectionID, inputID,event){
           if(part.id=== inputID){
             return{
               ...part,
-              name: changeElement
+              name: event.target.value
             }
           }
           else {
@@ -616,7 +616,7 @@ function changeInput(formID, sectionID, inputID,event){
           if(part.id=== inputID){
             return{
               ...part,
-              downPayment: changeElement
+              downPayment: event.target.value
             }
           }
           else {
@@ -645,7 +645,7 @@ function changeInput(formID, sectionID, inputID,event){
           if(part.id=== inputID){
             return{
               ...part,
-              value: changeElement
+              value: event.target.value
             }
           }
           else {
@@ -674,7 +674,7 @@ function changeInput(formID, sectionID, inputID,event){
           if(part.id=== inputID){
             return{
               ...part,
-              name: changeElement
+              name: event.target.value
             }
           }
           else {
@@ -702,7 +702,7 @@ function changeInput(formID, sectionID, inputID,event){
           if(part.id=== inputID){
             return{
               ...part,
-              value: changeElement
+              value: event.target.value
             }
           }
           else {
@@ -721,7 +721,10 @@ function changeInput(formID, sectionID, inputID,event){
     setFormArray(newMatch)
     setCurrentForm(theMatch[0])
    }   
-   
+  }
+  else{
+
+  }
 
 }
 
@@ -745,7 +748,7 @@ function changeInput(formID, sectionID, inputID,event){
        asset={currentForm.asset}
        liabilities={currentForm.liabilities}
        delInput={delInput}
-       
+       changeInput={changeInput}
 
       /> :<h1>Please push the Plus button to start </h1>}
     </div>
