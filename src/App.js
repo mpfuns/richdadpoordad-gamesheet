@@ -335,14 +335,393 @@ function changeInput(formID, sectionID, inputID,event){
 
    const changeElement = event.target.value
 
-   switch(sectionID){
-
-
-
-
-
+   if(sectionID=== "i-dChange-text"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      income:{...piece.income,
+      interest: piece.income.interest.map(part => {
+        if(part.id=== inputID){
+          return{
+            ...part,
+            name: changeElement
+          }
+        }
+        else {
+          return part
+        }
+      })
+        
+    } 
+  
+  }})
     
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    
+  
+  
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+   } else if(sectionID ==="i-dChange-value"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      income:{...piece.income,
+      interest: piece.income.interest.map(part => {
+        if(part.id=== inputID){
+          return{
+            ...part,
+            value: changeElement
+          }
+        }
+        else {
+          return part
+        }
+      })
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    
+  
+  
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+   } else  if(sectionID === "r-eChange-text"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      income:{...piece.income,
+        realEstate: piece.income.realEstate.map(part => {
+          if(part.id=== inputID){
+            return{
+              ...part,
+              name: changeElement
+            }
+          }
+          else {
+            return part
+          }
+        })
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+    
+   } else if(sectionID === "r-eChange-value"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      income:{...piece.income,
+        realEstate: piece.income.realEstate.map(part => {
+          if(part.id=== inputID){
+            return{
+              ...part,
+              value: changeElement
+            }
+          }
+          else {
+            return part
+          }
+        })
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+   } else if(sectionID === "o-eChange-text"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      expense:{...piece.expense,
+        otherExpense: piece.expense.otherExpense.map(part => {
+          if(part.id=== inputID){
+            return{
+              ...part,
+              name: changeElement
+            }
+          }
+          else {
+            return part
+          }
+        })
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+   } else if(sectionID=== "o-eChange-value"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      expense:{...piece.expense,
+        otherExpense: piece.expense.otherExpense.map(part => {
+          if(part.id=== inputID){
+            return{
+              ...part,
+              value: changeElement
+            }
+          }
+          else {
+            return part
+          }
+        })
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+
+
+   } else if(sectionID === "s-fChange-text"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      asset:{...piece.asset,
+        stocks: piece.asset.stocks.map(part => {
+          if(part.id=== inputID){
+            return{
+              ...part,
+              name: changeElement
+            }
+          }
+          else {
+            return part
+          }
+        })
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+   } else  if(sectionID === "s-fChange-downpayment"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      asset:{...piece.asset,
+        stocks: piece.asset.stocks.map(part => {
+          if(part.id=== inputID){
+            return{
+              ...part,
+              downPayment: changeElement
+            }
+          }
+          else {
+            return part
+          }
+        })
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+   } else if (sectionID=== "s-fChange-value"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      asset:{...piece.asset,
+        stocks: piece.asset.stocks.map(part => {
+          if(part.id=== inputID){
+            return{
+              ...part,
+              value: changeElement
+            }
+          }
+          else {
+            return part
+          }
+        })
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+   } else if(sectionID=== "r-bChange-text"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      asset:{...piece.asset,
+        business: piece.asset.business.map(part => {
+          if(part.id=== inputID){
+            return{
+              ...part,
+              name: changeElement
+            }
+          }
+          else {
+            return part
+          }
+        })
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+   }else if(sectionID=== "r-bChange-downpayment"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      asset:{...piece.asset,
+        business: piece.asset.business.map(part => {
+          if(part.id=== inputID){
+            return{
+              ...part,
+              downPayment: changeElement
+            }
+          }
+          else {
+            return part
+          }
+        })
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+
    }
+   else if(sectionID=== "r-bChange-value"){
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      asset:{...piece.asset,
+        business: piece.asset.business.map(part => {
+          if(part.id=== inputID){
+            return{
+              ...part,
+              value: changeElement
+            }
+          }
+          else {
+            return part
+          }
+        })
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+
+   } else if(sectionID=== "r-mChange-text"){
+
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      liabilities:{...piece.liabilities,
+        realLiability: piece.liabilities.realLiability.map(part => {
+          if(part.id=== inputID){
+            return{
+              ...part,
+              name: changeElement
+            }
+          }
+          else {
+            return part
+          }
+        })
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+
+   } else if(sectionID=== "r-mChange-value"){
+
+    const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
+      ...piece,
+      liabilities:{...piece.liabilities,
+        realLiability: piece.liabilities.realLiability.map(part => {
+          if(part.id=== inputID){
+            return{
+              ...part,
+              value: changeElement
+            }
+          }
+          else {
+            return part
+          }
+        })
+        
+    } 
+  
+  }})
+    
+    const notMatch = formArray.filter(form => form.id !== formID)
+   
+    const newMatch= theMatch.concat(notMatch)
+    
+    setFormArray(newMatch)
+    setCurrentForm(theMatch[0])
+   }   
+   
 
 }
 
