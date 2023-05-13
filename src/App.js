@@ -13,7 +13,7 @@ function App() {
 
  
  
- 
+ // ADD INPUT 
   function addInputs(formID,sectionId){
 
 
@@ -154,9 +154,9 @@ else if(sectionId==="r-mAdd"){
 
 }
 
-console.log(formArray)
 
 
+//ADD FORM
 
   function addForm(){
       const newForm = {
@@ -200,12 +200,15 @@ console.log(formArray)
    
    }
 
+  //DELETE FORM
 function delForm(event, formID){
     event.stopPropagation();
     setFormArray(oldForm => oldForm.filter(form => form.id!== formID))
     setCurrentForm(formArray[0])
   return console.log("deleted", formID)
 }
+
+//DELETE INPUT 
 
 function delInput(formID, sectionID, inputID){
 
@@ -331,10 +334,12 @@ function delInput(formID, sectionID, inputID){
 
 }
 
+
+//CHANGE INPUT
+
 function changeInput(formID, sectionID, inputID,event){
  
 if (event !== undefined){
-
    if(sectionID=== "i-dChange-text"){
     const theMatch = formArray.filter(form => form.id === formID).map(piece => {  return{
       ...piece,
@@ -728,6 +733,59 @@ if (event !== undefined){
 
 }
 
+
+
+/*
+
+CHANGE EVENT FOR OTHER BASIC INPUT IN FORM  
+
+
+*/
+
+function basicInputChange (formID,bigSection,interName, event){
+  
+   if (bigSection==="income"){
+    const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+      ...part, 
+      income:{
+
+        salary: event.target.value,
+        ...part.income
+       
+      }
+    }})
+
+    const notSelectedForm=formArray.filter(form => form.id !== formID)
+    const newSelectedForm=selectedForm.concat(notSelectedForm)
+    setFormArray(newSelectedForm)
+    setCurrentForm(selectedForm[0])
+
+
+   }
+   else if(bigSection==="expense"){
+    if(interName === "taxes"){
+
+    } else if(interName === "home"){
+
+    } else if(interName=== "school"){
+
+    }else if(interName=== "car"){
+
+    }else if(interName=== "credit"){
+
+    }else if(interName=== "bank"){
+
+    }else if(interName=== "childern"){
+
+    }
+
+   }
+   else if(bigSection=== "asset"){
+
+   } else if(bigSection === "liab"){
+
+   }
+}
 
 
   return (

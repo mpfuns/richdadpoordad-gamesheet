@@ -12,7 +12,7 @@ function Form(props) {
    <input
     type="text"
     placeholder="name of interest/dividends"
-    onChange={props.changeInput(props.currentForm.id,"i-dChange-text",input.id)}
+    onChange={(event) =>props.changeInput(props.currentForm.id,"i-dChange-text",input.id, event)}
     id={`${input.id}-text`}
     value={input.name}
 />
@@ -20,7 +20,7 @@ function Form(props) {
 <input
                 type="number"
                 placeholder="0"
-                onChange={props.changeInput(props.currentForm.id,"i-dChange-value",input.id)}
+                onChange={(event)=>props.changeInput(props.currentForm.id,"i-dChange-value",input.id, event)}
                 id={`${input.id}-value`}
                 value={input.value}
             />
@@ -36,7 +36,7 @@ const  realEstateDiv= props.income.realEstate.map(input => (
   <input
    type="text"
    placeholder="name of interest/dividends"
-   onChange={props.changeInput(props.currentForm.id,"r-eChange-text",input.id)}
+   onChange={(event)=>props.changeInput(props.currentForm.id,"r-eChange-text",input.id, event)}
    id={`${input.id}-text`}
    value={input.name}
 />
@@ -44,7 +44,7 @@ const  realEstateDiv= props.income.realEstate.map(input => (
 <input
                type="number"
                placeholder="0"
-               onChange={props.changeInput(props.currentForm.id,"r-eChange-value",input.id)}
+               onChange={(event)=>props.changeInput(props.currentForm.id,"r-eChange-value",input.id,event)}
                id={`${input.id}-value`}
                value={input.value}
            />
@@ -56,7 +56,7 @@ const  expenseDiv= props.expense.otherExpense.map(input => (
   <input
    type="text"
    placeholder="name of interest/dividends"
-   onChange={props.changeInput(props.currentForm.id,"o-eChange-text",input.id)}
+   onChange={(event)=>props.changeInput(props.currentForm.id,"o-eChange-text",input.id, event)}
    id={`${input.id}-text`}
    value={input.name}
 />
@@ -64,7 +64,7 @@ const  expenseDiv= props.expense.otherExpense.map(input => (
 <input
                type="number"
                placeholder="0"
-               onChange={props.changeInput(props.currentForm.id,"o-eChange-value",input.id)}
+               onChange={(event)=>props.changeInput(props.currentForm.id,"o-eChange-value",input.id,event)}
                id={`${input.id}-value`}
                value={input.value}
            />
@@ -76,7 +76,7 @@ const  stockDiv= props.asset.stocks.map(input => (
   <input
    type="text"
    placeholder="name of interest/dividends"
-   onChange={props.changeInput(props.currentForm.id,"s-fChange-text",input.id)}
+   onChange={(event)=>props.changeInput(props.currentForm.id,"s-fChange-text",input.id, event)}
    id={`${input.id}-text`}
    value={input.name}
 />
@@ -84,7 +84,7 @@ const  stockDiv= props.asset.stocks.map(input => (
 <input
                type="number"
                placeholder="0"
-               onChange={props.changeInput(props.currentForm.id,"s-fChange-downpayment",input.id)}
+               onChange={(event)=>props.changeInput(props.currentForm.id,"s-fChange-downpayment",input.id, event)}
                id={`${input.id}-downPayment`}
                value={input.downPayment}
            />
@@ -92,7 +92,7 @@ const  stockDiv= props.asset.stocks.map(input => (
 <input
                type="number"
                placeholder="0"
-               onChange={props.changeInput(props.currentForm.id,"s-fChange-value",input.id)}
+               onChange={(event)=>props.changeInput(props.currentForm.id,"s-fChange-value",input.id, event)}
                id={`${input.id}-value`}
                value={input.value}
            />
@@ -105,7 +105,7 @@ const  businessDiv= props.asset.business.map(input => (
   <input
    type="text"
    placeholder="name of interest/dividends"
-   onChange={props.changeInput(props.currentForm.id,"r-bChange-text",input.id)}
+   onChange={(event)=>props.changeInput(props.currentForm.id,"r-bChange-text",input.id, event)}
    id={`${input.id}-text`}
    value={input.name}
 />
@@ -113,7 +113,7 @@ const  businessDiv= props.asset.business.map(input => (
 <input
                type="number"
                placeholder="0"
-               onChange={props.changeInput(props.currentForm.id,"r-bChange-downpayment",input.id)}
+               onChange={(event)=>props.changeInput(props.currentForm.id,"r-bChange-downpayment",input.id, event)}
                id={`${input.id}-downPayment`}
                value={input.downPayment}
            />
@@ -121,7 +121,7 @@ const  businessDiv= props.asset.business.map(input => (
 <input
                type="number"
                placeholder="0"
-               onChange={props.changeInput(props.currentForm.id,"r-bChange-value",input.id)}
+               onChange={(event)=>props.changeInput(props.currentForm.id,"r-bChange-value",input.id, event)}
                id={`${input.id}-value`}
                value={input.value}
            />
@@ -133,7 +133,7 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
   <input
    type="text"
    placeholder="name of interest/dividends"
-   onChange={props.changeInput(props.currentForm.id,"r-mChange-text",input.id)}
+   onChange={(event)=>props.changeInput(props.currentForm.id,"r-mChange-text",input.id, event)}
    id={`${input.id}-text`}
    value={input.name}
 />
@@ -141,7 +141,7 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
 <input
                type="number"
                placeholder="0"
-               onChange={props.changeInput(props.currentForm.id,"r-mChange-value",input.id)}
+               onChange={(event)=>props.changeInput(props.currentForm.id,"r-mChange-value",input.id, event)}
                id={`${input.id}-value`}
                value={input.value}
            />
