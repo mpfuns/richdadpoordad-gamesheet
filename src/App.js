@@ -20,15 +20,15 @@ function App() {
 const newSection={
 name:"", 
 id: nanoid(),
-value:""
+value:0
 }
 
 // this is  input with 3 of them 
 const newbus ={
   name:"", 
 id: nanoid(),
-value:"",
-downPayment:""
+value:0,
+downPayment:0
 }
 
 
@@ -163,32 +163,33 @@ else if(sectionId==="r-mAdd"){
         id: nanoid(),
         title: 'New',
         income:{
-          salary:"0",
+          salary:0,
           interest:[],
           realEstate:[]
         }, 
         expense:{
-          taxes:"0",
-          home:"0",
-          school:"0",
-          car:"0",
-          credit:"0",
-          bank:"0",
-          children:"0",
+          taxes:0,
+          home:0,
+          school:0,
+          car:0,
+          credit:0,
+          bank:0,
+          children:0,
           otherExpense:[]
 
         }, 
         asset:{
-          saving:"0",
-          precious:"0",
+          saving:0,
+          precious:0,
           stocks:[],
           business:[]
         },
         liabilities:{
-          mort:"0",
-          sLoan:"0",
-          cLoan:"0",
-          bLoan:"0",
+          mort:0,
+          sLoan:0,
+          cLoan:0,
+          ccLoan: 0,
+          bLoan:0,
           realLiability: [] 
         }
 
@@ -748,13 +749,14 @@ function basicInputChange (formID,bigSection,interName, event){
     const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
       ...part, 
       income:{
-
-        salary: event.target.value,
-        ...part.income
+        ...part.income,
+        salary: event.target.value
+       
        
       }
     }})
-
+    
+    
     const notSelectedForm=formArray.filter(form => form.id !== formID)
     const newSelectedForm=selectedForm.concat(notSelectedForm)
     setFormArray(newSelectedForm)
@@ -764,28 +766,235 @@ function basicInputChange (formID,bigSection,interName, event){
    }
    else if(bigSection==="expense"){
     if(interName === "taxes"){
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        expense:{
+          ...part.expense,
+          taxes: event.target.value
+          
+         
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
 
     } else if(interName === "home"){
 
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        expense:{
+          ...part.expense,
+          home: event.target.value
+          
+         
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
     } else if(interName=== "school"){
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        expense:{
+          ...part.expense,
+          school: event.target.value
+          
+         
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
 
     }else if(interName=== "car"){
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        expense:{
+          ...part.expense,
+          car: event.target.value
+          
+         
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
 
     }else if(interName=== "credit"){
 
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        expense:{
+          ...part.expense,
+          credit: event.target.value
+          
+         
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
     }else if(interName=== "bank"){
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        expense:{
+          ...part.expense,
+          bank: event.target.value
+          
+         
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
 
     }else if(interName=== "childern"){
-
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        expense:{
+          ...part.expense,
+          children: event.target.value
+          
+         
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
     }
 
    }
    else if(bigSection=== "asset"){
+    if(interName === "saving"){
 
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        asset:{
+          ...part.asset,
+          saving: event.target.value
+          
+         
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
+    } else if(interName === "precious"){
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        asset:{
+          ...part.asset,
+          precious: event.target.value
+          
+         
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
+
+    }
    } else if(bigSection === "liab"){
+    if(interName === "home"){
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        liabilities:{
+          ...part.liabilities,
+          mort: event.target.value
+          
+         
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
+    } else if(interName === "school"){
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        liabilities:{
+          ...part.liabilities,
+          sLoan: event.target.value
+          
+         
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
 
+
+    }else if(interName === "car"){
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        liabilities:{
+          ...part.liabilities,
+          cLoan: event.target.value
+          
+         
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
+
+    }else if(interName === "credit"){
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        liabilities:{
+          ...part.liabilities,
+          ccLoan: event.target.value
+          
+         
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
+    }else if(interName === "bank"){
+      const selectedForm= formArray.filter(form => form.id === formID).map(part =>{ return {
+        ...part, 
+        liabilities:{
+          ...part.liabilities,
+          bLoan: event.target.value
+          
+        }
+      }})
+  
+      const notSelectedForm=formArray.filter(form => form.id !== formID)
+      const newSelectedForm=selectedForm.concat(notSelectedForm)
+      setFormArray(newSelectedForm)
+      setCurrentForm(selectedForm[0])
+    }
    }
 }
+
 
 
   return (
@@ -807,6 +1016,7 @@ function basicInputChange (formID,bigSection,interName, event){
        liabilities={currentForm.liabilities}
        delInput={delInput}
        changeInput={changeInput}
+       basicInputChange={basicInputChange}
 
       /> :<h1>Please push the Plus button to start </h1>}
     </div>

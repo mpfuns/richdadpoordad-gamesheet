@@ -156,8 +156,9 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"income", "salary",event)}
                 id="salary"
+                value={props.income.salary}
             />
             <div id="interest">
             <h3>Interest/dividends:</h3>
@@ -179,50 +180,57 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"expense", "taxes",event)}
                 id="Taxes"
+                value={props.expense.taxes}
             />
             <label htmlFor="Home-e">Home Mortgage: $</label>
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"expense", "home",event)}
                 id="Home-e"
+                value={props.expense.home}
             />
             <label htmlFor="school-p">School Loan Payment: $</label>
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"expense", "school",event)}
                 id="school-p"
+                value={props.expense.school}
             />
             <label htmlFor="Car-p">Car Loan Payment: $</label>
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"expense", "car",event)}
                 id="Car-p"
+                value={props.expense.car}
             />
             <label htmlFor="credit-p">Credit Card Loan Payment: $</label>
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"expense", "credit",event)}
                 id="credit-p"
+                value={props.expense.credit}
             />
             <label htmlFor="bank-p">Bank Loan Payment: $</label>
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"expense", "bank",event)}
                 id="bank-p"
+                value={props.expense.bank}
             />
             <label htmlFor="Childern">Childern Expense: $</label>
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"expense", "childern",event)}
                 id="Childern"
+                value={props.expense.childern}
             />
             <div id="other-expense">
             <h3>Other Expense:</h3>
@@ -236,15 +244,17 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"asset", "saving",event)}
                 id="saving"
+                value={props.asset.saving}
             />
             <label htmlFor="Precious">Precious Metals, etc: $</label>
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"asset", "precious",event)}
                 id="Precious"
+                value={props.asset.precious}
             />
             <div id="three-share">
             <h3>Stocks/Funds/CDS: # of Share:  Cost/Shares:</h3>
@@ -263,36 +273,41 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"liab", "home",event)}
                 id="Home-l"
+                value={props.liabilities.mort}
             />
             <label htmlFor="school-l">School Loan: $</label>
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"liab", "school",event)}
                 id="school-l"
+                value={props.liabilities.sLoan}
             />
             <label htmlFor="Car-l">Car Loan: $</label>
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"liab", "car",event)}
                 id="Car-l"
+                value={props.liabilities.cLoan}
             />
             <label htmlFor="credit-l">Credit Card Loan: $</label>
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputChange(props.currentForm.id,"liab", "credit",event)}
                 id="credit-l"
+                value={props.liabilities.ccloan}
             />
             <label htmlFor="bank-l">Bank Loan: $</label>
       <input
                 type="number"
                 placeholder="0"
-                //onChange={handleChange}
+                onChange={(event)=>props.basicInputchange(props.currentForm.id,"liab", "bank",event)}
                 id="bank-l"
+                value={props.liabilities.bloan}
             />
             <div id="two-real-mort">
             <h3>Real Estate/Business:  Mortgage/Liability:</h3>
