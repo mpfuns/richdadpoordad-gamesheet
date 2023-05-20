@@ -316,7 +316,22 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
             </div>
     </div>
     <div className='math-section'>
-      <h2>Math</h2>
+      <h2>Name</h2>
+      
+      <h1>$ salary</h1>
+      <h1><i className="fa-solid fa-plus"></i></h1>
+      <h1>$ passive income </h1>
+      <h1><i class="fa-solid fa-equals"></i></h1>
+      <h1>$ total income </h1>
+      <h1><i class="fa-solid fa-minus"></i></h1>
+      <h1>$ Total expense</h1>
+      <h1><i class="fa-solid fa-equals"></i></h1>
+      <h1>$ Flow</h1>
+      <h1>Monthly Cash Flow</h1>
+      <button>Run Calculations</button>
+    <div id="fact"> 
+    <p>If Passive Income is greater than Total Expenses you’re out of the Rat Race!</p>
+    </div>
     </div>
     </div>
   );
