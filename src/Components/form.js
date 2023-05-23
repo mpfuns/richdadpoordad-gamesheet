@@ -316,8 +316,8 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
             </div>
     </div>
     <div className='math-section'>
-      <h2>Name</h2>
-      
+      {props.currentForm.update?<h2>change here</h2>:<h2>{props.currentForm.title}</h2>}
+      <button >update</button>
       <h1>$ salary</h1>
       <h1><i className="fa-solid fa-plus"></i></h1>
       <h1>$ passive income </h1>

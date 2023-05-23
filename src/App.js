@@ -162,6 +162,7 @@ else if(sectionId==="r-mAdd"){
       const newForm = {
         id: nanoid(),
         title: 'New',
+        update: false,
         income:{
           salary:0,
           interest:[],
@@ -191,7 +192,16 @@ else if(sectionId==="r-mAdd"){
           ccLoan: 0,
           bLoan:0,
           realLiability: [] 
+        },
+        math:{
+          passiveIncome: 0,
+          totalIncome:0,
+          totalExpense:0,
+          monthly:0,
+          start: false
+
         }
+        
 
 
       }
@@ -995,6 +1005,20 @@ function basicInputChange (formID,bigSection,interName, event){
    }
 }
 
+function updateButton (formID){
+  const selectedFormB= formArray.filter(form => form.id === formID).map(part =>{ return {
+    ...part, 
+    update:!part.update
+    
+  }})
+
+  const notSelectedFormB=formArray.filter(form => form.id !== formID)
+  const newSelectedFormB=selectedFormB.concat(notSelectedFormB)
+  setFormArray(newSelectedFormB)
+  setCurrentForm(selectedFormB[0])
+
+}
+
 
 
   return (
@@ -1017,6 +1041,7 @@ function basicInputChange (formID,bigSection,interName, event){
        delInput={delInput}
        changeInput={changeInput}
        basicInputChange={basicInputChange}
+       updateButton={updateButton}
 
       /> :<h1>Please push the Plus button to start </h1>}
     </div>
