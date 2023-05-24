@@ -316,8 +316,16 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
             </div>
     </div>
     <div className='math-section'>
-      {props.currentForm.update?<h2>change here</h2>:<h2>{props.currentForm.title}</h2>}
-      <button >update</button>
+      <div>
+      {props.currentForm.update? <input
+    type="text"
+    placeholder="name"
+    onChange={(event)=>props.updateName(props.currentForm.id,event)}
+    //id=
+    value={props.currentForm.title}
+/>:<h2>{props.currentForm.title}</h2>}
+      <button onClick={()=>props.updateButton(props.currentForm.id)} >update</button>
+      </div>
       <h1>$ salary</h1>
       <h1><i className="fa-solid fa-plus"></i></h1>
       <h1>$ passive income </h1>

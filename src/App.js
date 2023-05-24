@@ -1019,6 +1019,20 @@ function updateButton (formID){
 
 }
 
+function updateName(formID,event){
+
+  const selectedFormN= formArray.filter(form => form.id === formID).map(part =>{ return {
+    ...part, 
+    title: event.target.value
+    
+  }})
+
+  const notSelectedFormN=formArray.filter(form => form.id !== formID)
+  const newSelectedFormN=selectedFormN.concat(notSelectedFormN)
+  setFormArray(newSelectedFormN)
+  setCurrentForm(selectedFormN[0])
+
+}
 
 
   return (
@@ -1042,6 +1056,7 @@ function updateButton (formID){
        changeInput={changeInput}
        basicInputChange={basicInputChange}
        updateButton={updateButton}
+       updateName={updateName}
 
       /> :<h1>Please push the Plus button to start </h1>}
     </div>
