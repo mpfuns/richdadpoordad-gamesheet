@@ -1034,6 +1034,42 @@ function updateName(formID,event){
 
 }
 
+function mathCashFlow (formID,income,expense ){
+ //math 
+const interestPart= income.interest.reduce((acc,cur) => {return parseInt(acc) + parseInt(cur.value)},0)
+const realPart= income.realEstate.reduce((acc,cur) => {return parseInt(acc) + parseInt(cur.value)},0)
+const otherExpense= expense.otherExpense.reduce((acc,cur) => {return parseInt(acc) + parseInt(cur.value)},0)
+
+const totalPassiveIncome= parseInt(interestPart) + parseInt(realPart)
+
+const totalIncomeMath = parseInt(income.salary)+ totalPassiveIncome
+const expensePart= parseInt(expense.bank) + parseInt(expense.car)+ parseInt(expense.children)+ parseInt(expense.credit)+ parseInt(expense.home) + parseInt(expense.school) +parseInt(expense.taxes)     
+const totalExpenseMath=  expensePart + otherExpense
+const monthlyMath= totalIncomeMath - totalExpenseMath
+
+//put in state
+const currentOne=formArray.filter(form => form.id === formID).map(part =>{
+  return{
+    ...part, 
+    math:{
+      passiveIncome:totalPassiveIncome,
+      totalIncome:totalIncomeMath,
+      totalExpense: totalExpenseMath,
+      monthly:monthlyMath,
+      start: true
+
+    }
+  }
+})
+console.log(currentOne)
+const NotCurrectone= formArray.filter(form => form.id !== formID)
+const  newCurrectArray= currentOne.concat(NotCurrectone)
+setFormArray(newCurrectArray)
+setCurrentForm(newCurrectArray[0])
+
+
+}
+
 
   return (
     <div className="App">
@@ -1057,6 +1093,7 @@ function updateName(formID,event){
        basicInputChange={basicInputChange}
        updateButton={updateButton}
        updateName={updateName}
+       mathCashFlow={mathCashFlow}
 
       /> :<h1>Please push the Plus button to start </h1>}
     </div>

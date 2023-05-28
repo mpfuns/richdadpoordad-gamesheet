@@ -326,17 +326,17 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
 />:<h2>{props.currentForm.title}</h2>}
       <button onClick={()=>props.updateButton(props.currentForm.id)} >update</button>
       </div>
-      <h1>$ salary</h1>
+      <h1>{props.currentForm.math.start? `$${props.income.salary}` : "$ salary" }</h1>
       <h1><i className="fa-solid fa-plus"></i></h1>
-      <h1>$ passive income </h1>
+      <h1>{props.currentForm.math.start? `$${props.currentForm.math.passiveIncome}` : "$ Passive Income" }</h1>
       <h1><i class="fa-solid fa-equals"></i></h1>
-      <h1>$ total income </h1>
+      <h1>{props.currentForm.math.start? `$${props.currentForm.math.totalIncome}` : "$ Total Income" }</h1>
       <h1><i class="fa-solid fa-minus"></i></h1>
-      <h1>$ Total expense</h1>
+      <h1>{props.currentForm.math.start? `$${props.currentForm.math.totalExpense}` : "$ Total Expense" }</h1>
       <h1><i class="fa-solid fa-equals"></i></h1>
-      <h1>$ Flow</h1>
       <h1>Monthly Cash Flow</h1>
-      <button>Run Calculations</button>
+      <h1>{props.currentForm.math.start? `$${props.currentForm.math.monthly}` : "$ Flow" }</h1>
+      <button onClick={()=>props.mathCashFlow(props.currentForm.id, props.income, props.expense)}>Run Calculations</button>
     <div id="fact"> 
     <p>If Passive Income is greater than Total Expenses you’re out of the Rat Race!</p>
     </div>
