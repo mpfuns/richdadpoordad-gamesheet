@@ -46,13 +46,15 @@
   overflow: auto;
 }
 .active-form{
-  background-color: #282c34;
+  background-color: #785589;
   color: white;
   cursor:pointer;
   font-family: 'Fredericka the Great';
 font-style: normal;
 font-weight: 400;
 font-size: 32px;
+display: flex;
+flex-direction: column;
 }
 .active-form:hover >.trash-sidebar{
   display: block;
@@ -65,20 +67,24 @@ font-weight: 400;
 font-size: 32px;
 color: #000000;
 cursor: pointer;
+display: flex;
+flex-direction: column;
 
 }
 .form:hover >.trash-sidebar{
   display: block;
+  
 }
 
 .trash-sidebar{
 display: none;
 background: none;
 border:none;
+
 }
 .fa-trash{
 cursor: pointer;
-color:#ff0000
+color:#ff0000;
 }
 .input:hover > .input-trash{
   display: block;
@@ -91,8 +97,8 @@ border:none;
 .form-content{
 display: grid;
 height: 100 vh;
-grid-template-columns: 1fr  2fr 2fr; 
-grid-template-rows: 1fr 1fr 1fr 1fr;
+grid-template-columns: 2.5 fr  2fr 2fr; 
+grid-template-rows: 0.75fr 1fr 1fr 1fr;
 grid-template-areas:
 "income math math math"
 "expense math math  math"
@@ -100,6 +106,7 @@ grid-template-areas:
 }
 .income{
   grid-area: income;
+  
 }
 .Expenses{
   grid-area: expense;
@@ -112,4 +119,27 @@ grid-template-areas:
 }
 .math-section{
   grid-area:math;
+}
+.sidetoside{
+  display:flex;
+  flex-direction:column;
+ 
+}
+
+.input{
+  display:flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  
+}
+.input-col{
+  display: flex;
+  flex-direction:column;
+}
+
+.input-space{
+ 
+  margin-right: 0.2rem;
 }
