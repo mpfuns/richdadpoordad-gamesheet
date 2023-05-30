@@ -290,6 +290,7 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
                 id="Precious"
                 value={props.asset.precious}
             />
+            
             </div>
             <div id="three-share">
             <h3>Stocks/Funds/CDS: # of Share:  Cost/Shares:</h3>
@@ -301,9 +302,11 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
             <button id="r-bAdd" onClick={() =>props.addInputs(props.currentForm.id,"r-bAdd" )}><i className="fa-solid fa-plus"></i></button>
             {businessDiv}
             </div>
+           
     </div>
     <div className='Liabilites'>
       <h2>Liabilites</h2>
+      
       <div className='input'>
       <label htmlFor="Home-l">Home Mortgage: $</label>
       <input
@@ -355,10 +358,11 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
             />
             </div>
             <div id="two-real-mort">
-            <h3>Real Estate/Business:  Mortgage/Liability:</h3>
+            <h3>Real Estate/Business: Mortgage/Liability:</h3>
             <button id="r-mAdd"  onClick={() =>props.addInputs(props.currentForm.id,"r-mAdd" )}><i className="fa-solid fa-plus"></i></button>
               {liabilitiesDiv}
             </div>
+           
     </div>
     <div className='math-section'>
       <div>

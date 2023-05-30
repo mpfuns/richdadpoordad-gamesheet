@@ -113,9 +113,11 @@ grid-template-areas:
 }
 .Asset{
   grid-area: asset;
+  margin-right: 20%;
 }
 .Liabilites{
   grid-area: lia;
+  margin-right: 20%;
 }
 .math-section{
   grid-area:math;
