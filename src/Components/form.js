@@ -154,6 +154,7 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
   <div className='input-flip'>
   <div className='input'>
   <input
+ 
    type="text"
    placeholder="name"
    onChange={(event)=>props.changeInput(props.currentForm.id,"r-mChange-text",input.id, event)}
@@ -162,6 +163,7 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
 />
 <label htmlFor={`${input.id}-text`} >:$</label>
 <input
+                
                type="number"
                placeholder="0"
                onChange={(event)=>props.changeInput(props.currentForm.id,"r-mChange-value",input.id, event)}
@@ -306,14 +308,18 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
             
             </div>
             <div id="three-share">
-            <h3>Stocks/Funds/CDS: # of Share:  Cost/Shares:</h3>
+            <h4>Stocks/Funds/CDS: # of Share:  Cost/Shares:</h4>
+            <div className=''>
             <button id="s-fAdd"  onClick={() =>props.addInputs(props.currentForm.id,"s-fAdd" )}><i className="fa-solid fa-plus"></i></button>
             {stockDiv}
             </div>
+            </div>
             <div id="three-real">
-            <h3>Real Estate/Business: Down Payment: Cost:</h3>
+            <div className=''>
+            <h4>Real Estate/Business: Down Payment: Cost:</h4>
             <button id="r-bAdd" onClick={() =>props.addInputs(props.currentForm.id,"r-bAdd" )}><i className="fa-solid fa-plus"></i></button>
             {businessDiv}
+            </div>
             </div>
            
     </div>
@@ -371,7 +377,7 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
             />
             </div>
             <div id="two-real-mort">
-            <h3>Real Estate/Business: Mortgage/Liability:</h3>
+            <h4>Real Estate/Business: Mortgage/Liability:</h4>
             <button id="r-mAdd"  onClick={() =>props.addInputs(props.currentForm.id,"r-mAdd" )}><i className="fa-solid fa-plus"></i></button>
               {liabilitiesDiv}
             </div>

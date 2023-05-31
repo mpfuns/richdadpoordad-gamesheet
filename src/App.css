@@ -150,5 +150,22 @@ grid-template-areas:
   margin-bottom: 15px;
 }
 .input-space{
- width: 20%;
+width: 20%;
+
+
 }
+.fixed-position{
+  padding-bottom: 20%;
+  position: absolute;
+  margin-top: 5px;
+  margin-right:600px;
+  margin-left: auto;
+}
+#three-share{
+  padding-bottom: 30px;
+}
+.input-match{
+  width: 30%;
+  
+  
+  }
