@@ -55,6 +55,8 @@ font-weight: 400;
 font-size: 32px;
 display: flex;
 flex-direction: column;
+border-bottom: 3px solid black;
+
 }
 .active-form:hover >.trash-sidebar{
   display: block;
@@ -65,10 +67,12 @@ font-family: 'Fredericka the Great';
 font-style: normal;
 font-weight: 400;
 font-size: 32px;
-color: #000000;
+color: #785589;
 cursor: pointer;
 display: flex;
 flex-direction: column;
+border-bottom: 3px solid black;
+
 
 }
 .form:hover >.trash-sidebar{
@@ -164,8 +168,3 @@ width: 20%;
 #three-share{
   padding-bottom: 30px;
 }
-.input-match{
-  width: 30%;
-  
-  
-  }

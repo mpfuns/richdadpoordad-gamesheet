@@ -44,11 +44,11 @@ const  realEstateDiv= props.income.realEstate.map(input => (
    id={`${input.id}-text`}
    value={input.name}
 />
-<label htmlFor={`${input.id}-text`} className='input-space'>:$</label>
+<label htmlFor={`${input.id}-text`} >:$</label>
 <input
                type="number"
                placeholder="0"
-               className='input-space'
+               
                onChange={(event)=>props.changeInput(props.currentForm.id,"r-eChange-value",input.id,event)}
                id={`${input.id}-value`}
                value={input.value}
@@ -191,13 +191,13 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
             </div>
             </div>
             <div id="interest">
-            <h3>Interest/dividends:</h3>
+            <h4>Interest/dividends:</h4>
             <button id="i-dAdd" onClick={() =>props.addInputs(props.currentForm.id,"i-dAdd" )}><i className="fa-solid fa-plus"></i></button>
             {interestDiv}
 
             </div>
             <div id="two-real">
-            <h3>Real Estate/Business</h3>
+            <h4>Real Estate/Business</h4>
             <button id="r-eAdd" onClick={() =>props.addInputs(props.currentForm.id,"r-eAdd" )}><i className="fa-solid fa-plus"></i></button>
             {realEstateDiv}
 
@@ -277,7 +277,7 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
 
              </div>
             <div id="other-expense">
-            <h3>Other Expense:</h3>
+            <h4>Other Expense:</h4>
             <button id="o-eAdd" onClick={() =>props.addInputs(props.currentForm.id,"o-eAdd")}><i className="fa-solid fa-plus"></i></button>
             {expenseDiv}
             </div>
