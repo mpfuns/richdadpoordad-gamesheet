@@ -8,6 +8,7 @@ function Form(props) {
 
 
  const interestDiv= props.income.interest.map(input => (
+   <div className='input-flip'>
    <div className='input'>
    <input
     type="text"
@@ -25,6 +26,7 @@ function Form(props) {
                 id={`${input.id}-value`}
                 value={input.value}
             />
+            </div>
 <button id="i-dDel" className='input-trash' onClick={() =>props.delInput(props.currentForm.id,"i-dDel", input.id )}><i className="fa-solid fa-trash"></i></button>
 </div>
 
@@ -33,7 +35,7 @@ function Form(props) {
 
 
 const  realEstateDiv= props.income.realEstate.map(input => (
-
+<div className='input-flip'>
   <div className='input'>
   <input
    type="text"
@@ -51,110 +53,122 @@ const  realEstateDiv= props.income.realEstate.map(input => (
                id={`${input.id}-value`}
                value={input.value}
            />
-           
+        </div>   
 
 <button id="r-eDel" className='input-trash' onClick={()=>props.delInput(props.currentForm.id,"r-eDel", input.id )} ><i className="fa-solid fa-trash"></i></button>
 
 </div>))
 
 const  expenseDiv= props.expense.otherExpense.map(input => (
+  <div className='input-flip'>
   <div className='input'>
   <input
    type="text"
-   placeholder="name of interest/dividends"
+   placeholder="name"
    className='input-space'
    onChange={(event)=>props.changeInput(props.currentForm.id,"o-eChange-text",input.id, event)}
    id={`${input.id}-text`}
    value={input.name}
 />
-<label htmlFor={`${input.id}-text`} className='input-space'>:$</label>
+<label htmlFor={`${input.id}-text`} >:$</label>
 <input
                type="number"
                placeholder="0"
-               className='input-space'
                onChange={(event)=>props.changeInput(props.currentForm.id,"o-eChange-value",input.id,event)}
                id={`${input.id}-value`}
                value={input.value}
            />
+           </div>
 <button id="o-eDel" className='input-trash' onClick={()=>props.delInput(props.currentForm.id,"o-eDel", input.id )} ><i className="fa-solid fa-trash"></i></button>
 </div>))
 
 const  stockDiv= props.asset.stocks.map(input => (
-  <div className='input'>
+  <div className='input-flip'>
+ <div className='input-3'>
   <input
    type="text"
-   placeholder="name of interest/dividends"
+   placeholder="name"
    onChange={(event)=>props.changeInput(props.currentForm.id,"s-fChange-text",input.id, event)}
    id={`${input.id}-text`}
    value={input.name}
+   className='input-space'
 />
-<label htmlFor={`${input.id}-text`}>: </label>
+<label htmlFor={`${input.id}-text`}>:</label>
 <input
                type="number"
                placeholder="0"
                onChange={(event)=>props.changeInput(props.currentForm.id,"s-fChange-downpayment",input.id, event)}
                id={`${input.id}-downPayment`}
                value={input.downPayment}
+               className='input-space'
            />
-           <label htmlFor={`${input.id}-value`}>: $ </label>
+           <label htmlFor={`${input.id}-value`}>:$</label>
 <input
                type="number"
                placeholder="0"
                onChange={(event)=>props.changeInput(props.currentForm.id,"s-fChange-value",input.id, event)}
                id={`${input.id}-value`}
                value={input.value}
+               className='input-space'
            />
+           </div>
 <button id="s-fDel" className='input-trash' onClick={()=>props.delInput(props.currentForm.id,"s-fDel", input.id )} ><i className="fa-solid fa-trash"></i></button>
 </div>))
 
 
 const  businessDiv= props.asset.business.map(input => (
-  <div className='input'>
+  
+  <div className='input-flip'>
+  <div className='input-3'>
   <input
    type="text"
-   placeholder="name of interest/dividends"
+   placeholder="name"
    onChange={(event)=>props.changeInput(props.currentForm.id,"r-bChange-text",input.id, event)}
    id={`${input.id}-text`}
    value={input.name}
+   className='input-space'
 />
-<label htmlFor={`${input.id}-text`}>: $</label>
+<label htmlFor={`${input.id}-text`}>:$</label>
 <input
                type="number"
                placeholder="0"
                onChange={(event)=>props.changeInput(props.currentForm.id,"r-bChange-downpayment",input.id, event)}
                id={`${input.id}-downPayment`}
                value={input.downPayment}
+               className='input-space'
            />
-           <label htmlFor={`${input.id}-value`}>: $ </label>
+           <label htmlFor={`${input.id}-value`}>:$</label>
 <input
                type="number"
                placeholder="0"
                onChange={(event)=>props.changeInput(props.currentForm.id,"r-bChange-value",input.id, event)}
                id={`${input.id}-value`}
                value={input.value}
+               className='input-space'
            />
+           </div>
 <button id="r-bDel" className='input-trash' onClick={()=>props.delInput(props.currentForm.id,"r-bDel", input.id )} ><i className="fa-solid fa-trash"></i></button>
 </div>))
 
 const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
+  <div className='input-flip'>
   <div className='input'>
   <input
    type="text"
-   placeholder="name of interest/dividends"
-   className='input-space'
+   placeholder="name"
    onChange={(event)=>props.changeInput(props.currentForm.id,"r-mChange-text",input.id, event)}
    id={`${input.id}-text`}
    value={input.name}
 />
-<label htmlFor={`${input.id}-text`} className='input-space'>:$</label>
+<label htmlFor={`${input.id}-text`} >:$</label>
 <input
                type="number"
                placeholder="0"
-               className='input-space'
                onChange={(event)=>props.changeInput(props.currentForm.id,"r-mChange-value",input.id, event)}
                id={`${input.id}-value`}
                value={input.value}
            />
+           </div>
 <button id="r-mDel" className='input-trash' onClick={()=>props.delInput(props.currentForm.id,"r-mDel", input.id )}><i className="fa-solid fa-trash"></i></button>
 </div>))
   
@@ -169,7 +183,6 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
                 type="number"
                 placeholder="0"
                 onChange={(event)=>props.basicInputChange(props.currentForm.id,"income", "salary",event)}
-                className='input-space'
                 id="salary"
                 value={props.income.salary}
             />

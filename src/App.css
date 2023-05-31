@@ -86,8 +86,13 @@ border:none;
 cursor: pointer;
 color:#ff0000;
 }
-.input:hover > .input-trash{
+.input-flip:hover > .input-trash{
   display: block;
+
+}
+.input-flip:hover{
+  display: flex;
+flex-direction: column;
 }
 .input-trash{
   display: none;
@@ -136,12 +141,14 @@ grid-template-areas:
   margin-bottom: 15px;
   
 }
-.input-col{
-  display: flex;
-  flex-direction:column;
-}
 
+.input-3{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
 .input-space{
- 
-  margin-right: 0.2rem;
+ width: 20%;
 }
