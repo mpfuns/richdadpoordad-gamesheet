@@ -177,7 +177,7 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
   return (
     <div className="form-content">
     <div className="income">
-      <h2>Income</h2>
+      <h2 className='green-title'>Income</h2>
      <div className='sidetoside'>
       <div className='input'>
       <label htmlFor="salary" >Salary: $</label>
@@ -192,20 +192,20 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
             </div>
             <div id="interest">
             <h4>Interest/dividends:</h4>
-            <button id="i-dAdd" onClick={() =>props.addInputs(props.currentForm.id,"i-dAdd" )}><i className="fa-solid fa-plus"></i></button>
+            <button id="i-dAdd" className="main-button" onClick={() =>props.addInputs(props.currentForm.id,"i-dAdd" )}><i className="fa-solid fa-plus"></i></button>
             {interestDiv}
 
             </div>
             <div id="two-real">
             <h4>Real Estate/Business</h4>
-            <button id="r-eAdd" onClick={() =>props.addInputs(props.currentForm.id,"r-eAdd" )}><i className="fa-solid fa-plus"></i></button>
+            <button id="r-eAdd" className="main-button" onClick={() =>props.addInputs(props.currentForm.id,"r-eAdd" )}><i className="fa-solid fa-plus"></i></button>
             {realEstateDiv}
 
 
             </div>
     </div>
     <div className='Expenses'>
-      <h2>Expenses</h2>
+      <h2 className='red-title'>Expenses</h2>
       <div className='sidetoside'>
       <div className='input'>
       <label htmlFor="Taxes" >Taxes: $</label>
@@ -278,13 +278,13 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
              </div>
             <div id="other-expense">
             <h4>Other Expense:</h4>
-            <button id="o-eAdd" onClick={() =>props.addInputs(props.currentForm.id,"o-eAdd")}><i className="fa-solid fa-plus"></i></button>
+            <button id="o-eAdd" className="main-button" onClick={() =>props.addInputs(props.currentForm.id,"o-eAdd")}><i className="fa-solid fa-plus"></i></button>
             {expenseDiv}
             </div>
            
     </div>
     <div className='Asset'>
-      <h2>Asset</h2>
+      <h2 className='green-title'>Asset</h2>
       <div className='input'>
       <label htmlFor="saving">Savings: $</label>
       <input
@@ -310,21 +310,21 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
             <div id="three-share">
             <h4>Stocks/Funds/CDS: # of Share:  Cost/Shares:</h4>
             <div className=''>
-            <button id="s-fAdd"  onClick={() =>props.addInputs(props.currentForm.id,"s-fAdd" )}><i className="fa-solid fa-plus"></i></button>
+            <button id="s-fAdd" className="main-button" onClick={() =>props.addInputs(props.currentForm.id,"s-fAdd" )}><i className="fa-solid fa-plus"></i></button>
             {stockDiv}
             </div>
             </div>
             <div id="three-real">
             <div className=''>
             <h4>Real Estate/Business: Down Payment: Cost:</h4>
-            <button id="r-bAdd" onClick={() =>props.addInputs(props.currentForm.id,"r-bAdd" )}><i className="fa-solid fa-plus"></i></button>
+            <button id="r-bAdd" className="main-button" onClick={() =>props.addInputs(props.currentForm.id,"r-bAdd" )}><i className="fa-solid fa-plus"></i></button>
             {businessDiv}
             </div>
             </div>
            
     </div>
     <div className='Liabilites'>
-      <h2>Liabilites</h2>
+      <h2 className='red-title'>Liabilites</h2>
       
       <div className='input'>
       <label htmlFor="Home-l">Home Mortgage: $</label>
@@ -378,7 +378,7 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
             </div>
             <div id="two-real-mort">
             <h4>Real Estate/Business: Mortgage/Liability:</h4>
-            <button id="r-mAdd"  onClick={() =>props.addInputs(props.currentForm.id,"r-mAdd" )}><i className="fa-solid fa-plus"></i></button>
+            <button id="r-mAdd" className="main-button" onClick={() =>props.addInputs(props.currentForm.id,"r-mAdd" )}><i className="fa-solid fa-plus"></i></button>
               {liabilitiesDiv}
             </div>
            
@@ -391,8 +391,8 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
     onChange={(event)=>props.updateName(props.currentForm.id,event)}
     //id=
     value={props.currentForm.title}
-/>:<h2>{props.currentForm.title}</h2>}
-      <button onClick={()=>props.updateButton(props.currentForm.id)} >update</button>
+/>:<h2 className='name-title'>{props.currentForm.title}</h2>}
+      <button className="main-button" onClick={()=>props.updateButton(props.currentForm.id)} >update</button>
       </div>
       <h1>{props.currentForm.math.start? `$ ${props.income.salary}` : "$ 0" }</h1>
       <h3>Salary</h3>
@@ -408,9 +408,9 @@ const  liabilitiesDiv= props.liabilities.realLiability.map(input => (
       <h1><i class="fa-solid fa-equals"></i></h1>
       <h1>{props.currentForm.math.start? `$ ${props.currentForm.math.monthly}` : "$ 0" }</h1>
       <h3>Monthly Cash Flow</h3>
-      <button onClick={()=>props.mathCashFlow(props.currentForm.id, props.income, props.expense)}>Run Calculations</button>
+      <button className="main-button" onClick={()=>props.mathCashFlow(props.currentForm.id, props.income, props.expense)}>Run Calculations</button>
     <div id="fact"> 
-    <p>If Passive Income is greater than Total Expenses you’re out of the Rat Race!</p>
+    <p > <em><strong>If Passive Income is greater than Total Expenses you’re out of the Rat Race!</strong></em></p>
     </div>
     </div>
     </div>

@@ -22,17 +22,18 @@ function activeAndCurrentForm(form) {
   key={form.id}
    id={form.id}
    onClick={() =>props.setCurrentForm(form)}
-  ><h4>{form.title}</h4>  <button onClick={(event)=> props.delForm(event,form.id)} className='trash-sidebar'><i className="fa-solid fa-trash"></i></button>
+  ><h3>{form.title}</h3>  <button  onClick={(event)=> props.delForm(event,form.id)} className='trash-sidebar'><i className="fa-solid fa-trash"></i></button>
   </div>)
 
   
-//ghgh
 
 
   return (
+ <div>
     <div className="sidebar">
-      <button onClick={props.addForm} className='main-plus-sidebar'><i className="fa-solid fa-plus"></i></button>
+      <button id="sidebutton" className="main-button" onClick={props.addForm} ><i className="fa-solid fa-plus"></i></button>
       {formElements}
+      </div>
     </div>
   );
 }

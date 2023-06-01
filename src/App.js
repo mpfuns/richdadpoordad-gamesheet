@@ -215,10 +215,15 @@ else if(sectionId==="r-mAdd"){
 function delForm(event, formID){
     event.stopPropagation();
     setFormArray(oldForm => oldForm.filter(form => form.id!== formID))
-    setCurrentForm(formArray[0])
-  return console.log("deleted", formID)
-}
+    if(formArray.length > 0){
+       return setCurrentForm(formArray[0])
+    } else {
+      return  setCurrentForm()
+    }
+   
 
+}
+console.log(currentForm)
 //DELETE INPUT 
 
 function delInput(formID, sectionID, inputID){
